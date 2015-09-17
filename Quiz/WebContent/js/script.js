@@ -91,6 +91,7 @@ function zerarPontuacao() {
 	localStorage.setItem("scoreAtualizado", 0);
 	document.getElementById('valorPontos').innerHTML = "0";
 	document.getElementById('resposta').value = "";
+	document.getElementById('pontos').innerHTML = "";
 	
 }
 
