@@ -34,7 +34,7 @@ function quiz() {
 	}
 
 	if (valorResposta == respostaCerta) {
-		score = score + valorPonto;
+		score = parseInt(score) + parseInt(valorPonto);
 		document.getElementById('pontos').innerHTML = "Voce acertou, é uma sequencia de " + resposta;
 		document.getElementById('valorPontos').innerHTML = score;
 		document.getElementById('pontos').style.color = "blue";
