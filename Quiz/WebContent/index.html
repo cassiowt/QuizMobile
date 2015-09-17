@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-<meta charset="utf-8">
-<title>Quiz Numérico</title>
-<meta name="viewport"
-	content="initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-<link href="./css/ratchet.min.css" rel="stylesheet">
-<link href="./css/ratchet-theme-android.min.css" rel="stylesheet">
-
+	<title>Quiz Sequencia</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="./css/ratchet.css" rel="stylesheet">
+	<link href="./css/ratchet-theme-android.css" rel="stylesheet">
 </head>
+
 <body onload="perguntas()">
 
 	<header class="bar bar-nav">
-		<h1 class="title" style="margin-right: 25%; color: green;">Quiz	das SEQUENCIA</h1>
+		<h1 class="title" style="margin-right: 25%; color: green;">Quiz	das SEQUENCIAS</h1>
+		<button onclick="perguntas()" class="btn btn-positive pull-right">Outra Sequencia</button>
 	</header>
 
 	<div class="card" style="margin-top: 50px">
@@ -39,12 +39,13 @@
 			Agência Experimental de Engenharia de Software <br>
 			Setembro/2015 <br>
 		</p>
+		<button onclick="zerarPontuacao()" class="btn btn-positive pull-right">Zerar Pontução</button>
+	
 	</div>
 
 	<script src="./js/jquery-2.1.0.min.js" type="text/jscript"></script>
 	<script src="./js/ratchet.min.js"></script>
-	<script src="./js/Chart.js"></script>
-	<script src="./js/cawt.js"></script>
+	<script src="./js/script.js"></script>
 
 </body>
 

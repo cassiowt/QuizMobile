@@ -35,20 +35,22 @@ function quiz() {
 
 	if (valorResposta == respostaCerta) {
 		score = parseInt(score) + parseInt(valorPonto);
-		document.getElementById('pontos').innerHTML = "Voce acertou, é uma sequencia de " + resposta;
+		document.getElementById('pontos').innerHTML = "Voce acertou.<br> Sequencia " + resposta;
 		document.getElementById('valorPontos').innerHTML = score;
 		document.getElementById('pontos').style.color = "blue";
 		localStorage.setItem("scoreAtualizado", score);
 	} else {
-		document.getElementById('pontos').innerHTML = "Voce ERROU.<br>  Dica essa sequencia é " + resposta;
-				
+		document.getElementById('pontos').innerHTML = "Voce ERROU.<br>  Dica: " + resposta;
+		document.getElementById('pontos').style.color = "red";		
 	}
 
 }
 
 
 function perguntas() {
-	var p = getRandomInt(4,1);
+	document.getElementById('resposta').value = "";
+	document.getElementById('pontos').innerHTML ="";
+	var p = getRandomInt(5,0);
 	
 	var serie;
 	var resposta;
@@ -84,6 +86,12 @@ function perguntas() {
 
 	document.getElementById('pergunta').innerHTML = serie.toString() + "...";
 
+}
+function zerarPontuacao() {
+	localStorage.setItem("scoreAtualizado", 0);
+	document.getElementById('valorPontos').innerHTML = "0";
+	document.getElementById('resposta').value = "";
+	
 }
 
 function getRandomInt(min, max) {
