@@ -1,9 +1,29 @@
 /*!
- * cawt.js
- *
+ * script.js: Script para o Jogo das Sequencias.
+ * Funções para incluir as sequencias na página e validar as respostas
+ * @autor Cássio Trindade
+ * @date Setembro/2015
+ * @version 0.1.0
+ * 
  * Copyright 2015 AGES
  **/
 
+
+/*!
+ *  Função quiz() é responsável por validar as pespostas.
+ *  
+ *  Busca na variavel "resposta" qual é a que foi inputada na pagina html e utiliza um
+ *  Switch Case para validar a resposta orreta.
+ *  
+ *  A cada resposta certa é adicionado 10 pontos  no Score do jogo, Pontuação fixa.
+ *  que é armazenada na variável "scoreAtualizado".
+ *  
+ *  Quando o usuario acerta é impresso na pagina uma mensagem de sucesso com o nome da sequencia:
+ *  		"Voce acertou.  Sequencia SEUENCIA", com a cora AZUL.
+ *  Quando o usuario erra é impresso na pagina uma mensagem de erro com uma dica da sequencia:
+ *  		"Voce ERROU.<br>  Dica:  SEUENCIA", com a cor VERMELHA.
+ *  
+ */
 function quiz() {
 
 	var resposta = localStorage.getItem("resposta")
@@ -29,7 +49,7 @@ function quiz() {
 		valorResposta = 32;
 		break;
 	case 'Primes':
-		valorResposta = 13
+		valorResposta = 5
 		break;
 	}
 
@@ -46,6 +66,13 @@ function quiz() {
 
 }
 
+/*!
+*  Função perguntas() é responsável por imprimir as perguntas na pagina gravar a resposta na memória.
+*  
+*  Temos uma conjunto de series finitas que são escolidas atraves de um numero randomico,
+*  passado esse para o Switch Case é escolida a sequencia a ser impressa na tela.
+*  
+*/
 
 function perguntas() {
 	document.getElementById('resposta').value = "";
@@ -63,7 +90,7 @@ function perguntas() {
 	var seriePi = [ 3, 1, 4, 1, 5 ]; // pi
 	var serieFibonacci = [ 1, 1, 2, 3, 5 ]; // Fibonacci
 	var serieSquares = [ 1, 2, 4, 8, 16 ]; // Squares
-	var seriePrimes = [ 2, 3, 5, 7, 11  ]; // Squares
+	var seriePrimes = [ 2, 3, , 7, 11  ]; // Prime
 
 	switch (p) {
 	case 1:
@@ -87,6 +114,10 @@ function perguntas() {
 	document.getElementById('pergunta').innerHTML = serie.toString() + "...";
 
 }
+
+/*!
+*  Função zerarPontuacao() apaga todos os campos da tela e limpa da memoria o score de pontuação.
+*/
 function zerarPontuacao() {
 	localStorage.setItem("scoreAtualizado", 0);
 	document.getElementById('valorPontos').innerHTML = "0";
@@ -95,6 +126,10 @@ function zerarPontuacao() {
 	
 }
 
+/*!
+*  Função getRandomInt() gera um numero randomico no intervalo dos parametros inteiros
+*  min: minimo e max: maximo.
+*/
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }

@@ -4,6 +4,10 @@
 <head>
 	<title>Quiz Sequencia</title>
 	<meta charset="utf-8">
+	<meta name="description" content="Funções para incluir as sequencias na página e validar as respostas">
+ 	<meta name="autor" content="Cássio Trindade">
+ 	<meta name="date" content="Setembro 2015">
+ 	<meta name="version" content=" 0.1.0">
 	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -11,11 +15,11 @@
 	<link href="./css/ratchet-theme-android.css" rel="stylesheet">
 </head>
 
-<body onload="perguntas()">
+<body onload="perguntas()"> <!-- Dispara função perguntas quando da abertura da página -->
 
 	<header class="bar bar-nav">
 		<h1 class="title" style="margin-right: 25%; color: green;">Quiz	das SEQUENCIAS</h1>
-		<button onclick="perguntas()" class="btn btn-positive pull-right">Outra Sequencia</button>
+		<button onclick="perguntas()" class="btn btn-positive pull-right">Outra Sequencia</button> <!-- Dispara função perguntas quando solicitada nova sequencia -->
 	</header>
 
 	<div class="card" style="margin-top: 50px">
@@ -39,8 +43,7 @@
 			Agência Experimental de Engenharia de Software <br>
 			Setembro/2015 <br>
 		</p>
-		<button onclick="zerarPontuacao()" class="btn btn-positive pull-right">Zerar Pontução</button>
-	
+		<button onclick="zerarPontuacao()" class="btn btn-positive pull-right">Zerar Pontução</button> <!-- Dispara função zeraPontuacao-->
 	</div>
 
 	<script src="./js/jquery-2.1.0.min.js" type="text/jscript"></script>
