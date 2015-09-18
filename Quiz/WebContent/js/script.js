@@ -8,64 +8,6 @@
  * Copyright 2015 AGES
  **/
 
-
-/*!
- *  Função quiz() é responsável por validar as pespostas.
- *  
- *  Busca na variavel "resposta" qual é a que foi inputada na pagina html e utiliza um
- *  Switch Case para validar a resposta orreta.
- *  
- *  A cada resposta certa é adicionado 10 pontos  no Score do jogo, Pontuação fixa.
- *  que é armazenada na variável "scoreAtualizado".
- *  
- *  Quando o usuario acerta é impresso na pagina uma mensagem de sucesso com o nome da sequencia:
- *  		"Voce acertou.  Sequencia SEUENCIA", com a cora AZUL.
- *  Quando o usuario erra é impresso na pagina uma mensagem de erro com uma dica da sequencia:
- *  		"Voce ERROU.<br>  Dica:  SEUENCIA", com a cor VERMELHA.
- *  
- */
-function quiz() {
-
-	var resposta = localStorage.getItem("resposta")
-	var valorPonto = 10;
-	var score = localStorage.getItem("scoreAtualizado", score);
-	
-	if (score == null)
-		score = 0
-	else
-		score = score;
-	
-	console.log(resposta + " " + score)
-	var respostaCerta = document.getElementById('resposta').value;
-
-	switch (resposta) {
-	case 'PI':
-		valorResposta = 9;
-		break;
-	case 'Fibonacci':
-		valorResposta = 8;
-		break;
-	case 'Squares':
-		valorResposta = 32;
-		break;
-	case 'Primes':
-		valorResposta = 5
-		break;
-	}
-
-	if (valorResposta == respostaCerta) {
-		score = parseInt(score) + parseInt(valorPonto);
-		document.getElementById('pontos').innerHTML = "Voce acertou.<br> Sequencia " + resposta;
-		document.getElementById('valorPontos').innerHTML = score;
-		document.getElementById('pontos').style.color = "blue";
-		localStorage.setItem("scoreAtualizado", score);
-	} else {
-		document.getElementById('pontos').innerHTML = "Voce ERROU.<br>  Dica: " + resposta;
-		document.getElementById('pontos').style.color = "red";		
-	}
-
-}
-
 /*!
 *  Função perguntas() é responsável por imprimir as perguntas na pagina gravar a resposta na memória.
 *  
@@ -76,7 +18,7 @@ function quiz() {
 
 function perguntas() {
 	document.getElementById('resposta').value = "";
-	document.getElementById('pontos').innerHTML ="";
+	document.getElementById('resultado').innerHTML ="";
 	var p = getRandomInt(5,0);
 	
 	var serie;
@@ -116,13 +58,70 @@ function perguntas() {
 }
 
 /*!
+ *  Função quiz() é responsável por validar as pespostas.
+ *  
+ *  Busca na variavel "resposta" qual é a que foi inputada na pagina html e utiliza um
+ *  Switch Case para validar a resposta orreta.
+ *  
+ *  A cada resposta certa é adicionado 10 pontos  no Score do jogo, Pontuação fixa.
+ *  que é armazenada na variável "scoreAtualizado".
+ *  
+ *  Quando o usuario acerta é impresso na pagina uma mensagem de sucesso com o nome da sequencia:
+ *  		"Voce acertou.  Sequencia SEUENCIA", com a cora AZUL.
+ *  Quando o usuario erra é impresso na pagina uma mensagem de erro com uma dica da sequencia:
+ *  		"Voce ERROU.<br>  Dica:  SEUENCIA", com a cor VERMELHA.
+ *  
+ */
+function quiz() {
+
+	var resposta = localStorage.getItem("resposta")
+	var valorPonto = 10;
+	var score = localStorage.getItem("scoreAtualizado", score);
+	
+	if (score == null)
+		score = 0
+	else
+		score = score;
+	
+	var respostaCerta = document.getElementById('resposta').value;
+
+	switch (resposta) {
+	case 'PI':
+		valorResposta = 9;
+		break;
+	case 'Fibonacci':
+		valorResposta = 8;
+		break;
+	case 'Squares':
+		valorResposta = 32;
+		break;
+	case 'Primes':
+		valorResposta = 5
+		break;
+	}
+
+	if (valorResposta == respostaCerta) {
+		score = parseInt(score) + parseInt(valorPonto);
+		document.getElementById('valorPontos').innerHTML = score;
+		document.getElementById('resultado').innerHTML = "Voce acertou.<br> Sequencia " + resposta;
+		document.getElementById('resultado').style.color = "blue";
+		localStorage.setItem("scoreAtualizado", score);
+	} else {
+		document.getElementById('resultado').innerHTML = "Voce ERROU.<br>  Dica: " + resposta;
+		document.getElementById('resultado').style.color = "red";		
+	}
+}
+
+
+
+/*!
 *  Função zerarPontuacao() apaga todos os campos da tela e limpa da memoria o score de pontuação.
 */
 function zerarPontuacao() {
 	localStorage.setItem("scoreAtualizado", 0);
 	document.getElementById('valorPontos').innerHTML = "0";
 	document.getElementById('resposta').value = "";
-	document.getElementById('pontos').innerHTML = "";
+	document.getElementById('resultado').innerHTML = "";
 	
 }
 
