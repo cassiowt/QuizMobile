@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<title>Quiz Sequencia</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Funções para incluir as sequencias na página e validar as respostas">
+ 	<meta name="autor" content="Cássio Trindade">
+ 	<meta name="date" content="Setembro 2015">
+ 	<meta name="version" content=" 1.0.0">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<link href="./css/ratchet.css" rel="stylesheet">
+	<link href="./css/ratchet-theme-android.css" rel="stylesheet">
+</head>
+
+<body onload="perguntas()"> <!-- Dispara função perguntas quando da abertura da página -->
+
+	<header class="bar bar-nav">
+		<h1 class="title" style="margin-right: 25%; color: green;">Quiz	das SEQUÊNCIAS</h1>
+		<button onclick="perguntas()" class="btn btn-positive pull-right">Outra Sequência</button> <!-- Dispara função perguntas quando solicitada nova sequencia -->
+	</header>
+
+	<div class="card" style="margin-top: 50px">
+		<h2 class="title">Complete a sequência</h2>
+		<div class="table-view-cell table-view-divider"><p id="pergunta" style="text-align: center; font-size:20px; font-weight: bold"></p></div>
+
+		<div class="input-row">
+			<label>Resposta</label> <input type="number" id="resposta">
+		</div>
+		<div class="input-row">
+			<h2 id="resultado" style="Color: red;"></h2>
+		</div>
+
+		<button class="btn btn-positive btn-block" onclick="quiz()">Respostas</button>
+		
+	</div>
+ 
+	<div class="bar">
+		<img  style="margin-top: 50px" alt="AGES" src="LogoAGES.png"> 
+		<!-- <span class="icon icon-compose icon-person" style="margin-top: 50px"> AGES </span> -->
+		<p>
+			PUCRS - Agência Experimental de Engenharia de Software <br>
+			Setembro/2015 <br>
+		</p>
+		<!-- <button onclick="zerarPontuacao()" class="btn btn-positive pull-right">Zerar Pontução</button> Dispara função zeraPontuacao -->
+	</div>
+
+	<script src="./js/jquery-2.1.0.min.js" type="text/jscript"></script>
+	<script src="./js/ratchet.min.js"></script>
+	<script src="./js/script.js"></script>
+
+</body>
+
+</html>
