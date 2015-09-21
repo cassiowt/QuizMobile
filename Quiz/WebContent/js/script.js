@@ -23,16 +23,16 @@ function perguntas() {
 	
 	var serie;
 	var resposta;
+	
 	var seriePi = new Array();
 	var serieFibonacci = new Array();
 	var serieSquares = new Array();
 	var seriePrimes = new Array();
 	
-	
-	var seriePi = [ 3, 1, 4, 1, 5 ]; // pi
-	var serieFibonacci = [ 1, 1, 2, 3, 5 ]; // Fibonacci
-	var serieSquares = [ 1, 2, 4, 8, 16 ]; // Squares
-	var seriePrimes = [ 2, 3, , 7, 11  ]; // Prime
+	var seriePi = [ 3, 1, 4, 1, 5," " ]; // pi
+	var serieFibonacci = [ 1, 1, 2, 3, 5," " ]; // Fibonacci
+	var serieSquares = [ 1, 2, 4, 8, 16," " ]; // Squares
+	var seriePrimes = [ 2, 3," ", 7, 11  ]; // Prime
 
 	switch (p) {
 	case 1:
@@ -53,7 +53,7 @@ function perguntas() {
 		break;
 	}
 
-	document.getElementById('pergunta').innerHTML = serie.toString() + "...";
+	document.getElementById('pergunta').innerHTML = serie.toString().replace(" ","...");
 
 }
 
